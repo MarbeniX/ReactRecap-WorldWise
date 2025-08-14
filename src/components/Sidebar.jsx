@@ -1,20 +1,19 @@
 import styles from "./Sidebar.module.css";
 import Logo from "./Logo";
 import AppNav from "./AppNav";
-import { Outlet } from "react-router-dom";
 import PropTypes from "prop-types";
 
 Sidebar.propTypes = {
-    cities: PropTypes.array,
-    loading: PropTypes.bool,
+    children: PropTypes.node,
 };
-export default function Sidebar({ cities, loading }) {
+
+export default function Sidebar({ children }) {
     return (
         <div className={styles.sidebar}>
             <Logo />
             <AppNav />
 
-            <Outlet context={{ cities, loading }} />
+            {children}
             <footer className={styles.footer}>
                 <p className={styles.copyright}>
                     &copy; Copyright {new Date().getFullYear()} Woldwise. All

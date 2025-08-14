@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Map from "../components/Map";
 import Sidebar from "../components/Sidebar";
 import styles from "./AppLayout.module.css";
+import { Outlet } from "react-router-dom";
 
 export default function AppLayout() {
     const [cities, setCities] = useState([]);
@@ -28,7 +29,9 @@ export default function AppLayout() {
 
     return (
         <div className={styles.app}>
-            <Sidebar cities={cities} loading={loading} />;
+            <Sidebar>
+                <Outlet context={{ cities, loading }} />
+            </Sidebar>
             <Map />
         </div>
     );
