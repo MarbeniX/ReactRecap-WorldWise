@@ -1,12 +1,14 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import "./index.css";
 import Homepage from "./pages/Homepage";
 import Princing from "./pages/Pricing";
 import Product from "./pages/Product";
 import PageNotFound from "./pages/PageNotFound";
 import Login from "./pages/Login";
 import AppLayout from "./pages/AppLayout";
-import "./index.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CityList from "./components/CityList";
+import CountryList from "./components/CountryList";
 
 export default function App() {
     return (
@@ -20,7 +22,7 @@ export default function App() {
                 <Route path="app" element={<AppLayout />}>
                     <Route index element={<CityList />} />
                     <Route path="cities" element={<CityList />} />
-                    <Route path="countries" element={<div>Countries</div>} />
+                    <Route path="countries" element={<CountryList />} />
                     <Route path="form" element={<div>Form</div>} />
                 </Route>
 

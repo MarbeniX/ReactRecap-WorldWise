@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
+
 import Map from "../components/Map";
 import Sidebar from "../components/Sidebar";
 import styles from "./AppLayout.module.css";
-import { Outlet } from "react-router-dom";
 
 export default function AppLayout() {
     const [cities, setCities] = useState([]);

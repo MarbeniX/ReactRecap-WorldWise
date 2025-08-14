@@ -1,8 +1,9 @@
+import { useOutletContext } from "react-router-dom";
+
 import Spinner from "./Spinner";
 import Message from "./Message";
 import styles from "./CityList.module.css";
 import CityItem from "./CityItem";
-import { useOutletContext } from "react-router-dom";
 
 export default function CityList() {
     const { cities, loading } = useOutletContext();
